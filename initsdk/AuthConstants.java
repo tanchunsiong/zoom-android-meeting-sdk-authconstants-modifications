@@ -1,5 +1,6 @@
 package us.zoom.sdksample.initsdk;
 
+import android.os.StrictMode;
 import android.util.JsonReader;
 
 import org.json.JSONObject;
@@ -38,11 +39,11 @@ public  class AuthConstants {
 
 
 
-	  public	 String SDK_JWTTOKEN(){
-		  //hackish way to fix NetworkOnMainThreadException
-		    StrictMode.ThreadPolicy policy = new StrictMode.ThreadPolicy.Builder().permitAll().build();
-        	StrictMode.setThreadPolicy(policy);
-		  
+	public	 String SDK_JWTTOKEN(){
+		//hackish way to fix NetworkOnMainThreadException
+		StrictMode.ThreadPolicy policy = new StrictMode.ThreadPolicy.Builder().permitAll().build();
+		StrictMode.setThreadPolicy(policy);
+
 		// Create URL
 		try{
 			String url = "https://yoururl.here/meeting/";
@@ -104,5 +105,3 @@ public  class AuthConstants {
 	}
 
 }
-
-
